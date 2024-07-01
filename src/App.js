@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import Counter from './components/Counter';
+import DataFetching from './components/DataFetching';
+import { ThemeProvider } from './components/ThemeContext';
+import ThemedComponent from './components/ThemedComponent';
+import InputComponent from './components/InputComponent';
 import './App.css';
+import './styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ThemeProvider>
+      <div className="App">
+        <header className="App-header">
+          <h1>React Hooks Showcase</h1>
+          <Counter />
+          <DataFetching />
+          <ThemedComponent />
+          <InputComponent />
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
